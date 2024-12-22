@@ -3,6 +3,7 @@ import re
 import discord
 from discord import app_commands
 import requests
+from keep_alive import keep_alive
 
 CONFIG = {
     'API_KEY': 'onEkoztnFpTi3VG7XQEq6skQWN3aFm3h',
@@ -120,11 +121,9 @@ async def on_ready():
     print('------')
 
 from keep_alive import keep_alive
-
-keep_alive()  
+keep_alive()
 
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 if not TOKEN:
     raise ValueError("No token found. Please set the DISCORD_BOT_TOKEN environment variable.")
-
 client.run(TOKEN)
